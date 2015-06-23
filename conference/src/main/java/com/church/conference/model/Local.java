@@ -18,7 +18,7 @@ public class Local {
 	@Column(name="LOCAL_ID", unique = true, nullable = false)
 	private long id;
 	
-	@Column(name = "LOCAL_NAME", unique = true, nullable = false)
+	@Column(name = "LOCAL_NAME", unique = false, nullable = false)
 	private String name;
 
 	@Column(name = "PLOCAL_ID", unique = false, nullable = true)
