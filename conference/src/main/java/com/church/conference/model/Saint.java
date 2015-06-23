@@ -12,13 +12,13 @@ import javax.persistence.UniqueConstraint;
 @Table(name = "groups", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "GROUP_NAME")
 })
-public class Groups {
+public class Saint {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="GROUP_ID", unique = true, nullable = false)
 	private long id;
 	
-	@Column(name = "GROUP_NAME", unique = false, nullable = false)
+	@Column(name = "GROUP_NAME", unique = true, nullable = false)
 	private String name;
 	
 	@Column(name = "THREAD_POOL_SIZE", unique = false, nullable = false)

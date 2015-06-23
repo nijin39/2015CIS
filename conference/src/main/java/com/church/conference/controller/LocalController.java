@@ -5,16 +5,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.church.conference.model.Groups;
-import com.church.conference.service.GroupRepository;
+import com.church.conference.model.Local;
+import com.church.conference.service.LocalRepository;
 
 @RestController
-public class GroupController {
+public class LocalController {
 
 	@Autowired
-	GroupRepository groupService;
+	LocalRepository localRepository;
 	
-	@RequestMapping(value = "/allGroups")
-	Iterable<Groups> findAll(){
-		return groupService.findAll();
+	@RequestMapping(value = "/allLocals")
+	Iterable<Local> findAll(){
+		return localRepository.findAll();
 	}
 }
