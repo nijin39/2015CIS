@@ -6,7 +6,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.church.conference.model.Groups;
 
-public interface GroupService extends CrudRepository<Groups, Long> {
+public interface GroupRepository extends CrudRepository<Groups, Long> {
 	Groups findById(long Id);
 	List<Groups> findAll();
 }
