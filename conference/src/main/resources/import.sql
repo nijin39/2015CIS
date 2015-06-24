@@ -8,4 +8,4 @@ insert into local(local_name, plocal_id, local_elder) values ('용산',0,'주평
 insert into local(local_name, plocal_id, local_elder) values ('용산',1,'김경태');
 insert into local(local_name, plocal_id, local_elder) values ('동작',1,'원종성');
 
-insert into car(car_name, driver_id, car_capacity) values ('엑스트렉',2,5);
+insert into car(car_name, driver_id, car_capacity, local) values ('엑스트렉',2,5,1);

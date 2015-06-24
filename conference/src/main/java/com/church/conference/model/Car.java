@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
@@ -31,7 +32,8 @@ public class Car {
 	private int capacity;
 	
 	@ManyToOne
-    @JsonBackReference
+    @JoinColumn(name = "local", referencedColumnName = "LOCAL_ID")
+	@JsonBackReference
     private Local local;
  
 	public long getId() {
@@ -77,7 +79,7 @@ public class Car {
 	@Override
 	public String toString() {
 		return "Car [id=" + id + ", name=" + name + ", driverId=" + driverId
-				+ ", capacity=" + capacity + "]";
+				+ ", capacity=" + capacity + ", local=" + local.getId() + "]";
 	}
 
 }

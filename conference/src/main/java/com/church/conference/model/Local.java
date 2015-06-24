@@ -12,6 +12,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 @Table(name = "local", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "LOCAL_ID")
@@ -31,8 +33,8 @@ public class Local {
 	@Column(name = "LOCAL_ELDER", unique = false, nullable = false)
 	private String elder;
 	
-	@OneToMany
-    //@JoinColumn(name="local_id", referencedColumnName="id")
+	@OneToMany(mappedBy = "local")
+	@JsonManagedReference
     private List<Car> carList;
 
 	public long getId() {

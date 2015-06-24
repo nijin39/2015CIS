@@ -15,7 +15,7 @@ public class LocalController {
 	@Autowired
 	LocalRepository localRepository;
 	
-	@RequestMapping(value = "/allLocals")
+	@RequestMapping(value = "/locals")
 	List<Local> findAll(){
 		return localRepository.findAll();
 	}
