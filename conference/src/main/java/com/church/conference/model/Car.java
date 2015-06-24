@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 @Table(name = "car", uniqueConstraints = {
@@ -33,7 +34,7 @@ public class Car {
 	
 	@ManyToOne
     @JoinColumn(name = "local", referencedColumnName = "LOCAL_ID")
-	@JsonBackReference
+	@JsonManagedReference
     private Local local;
  
 	public long getId() {

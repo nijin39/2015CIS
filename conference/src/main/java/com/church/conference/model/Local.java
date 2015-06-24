@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "local", uniqueConstraints = {
@@ -33,8 +33,16 @@ public class Local {
 	private String elder;
 	
 	@OneToMany(mappedBy = "local")
-	@JsonManagedReference
+	@JsonBackReference
     private List<Car> carList;
+	
+	@OneToMany(mappedBy = "local")
+	@JsonBackReference
+    private List<Room> roomList;
+	
+	@OneToMany(mappedBy = "local")
+	@JsonBackReference
+    private List<Saint> saintList;
 
 	public long getId() {
 		return id;
@@ -76,10 +84,19 @@ public class Local {
 		this.carList = carList;
 	}
 
+	public List<Room> getRoomList() {
+		return roomList;
+	}
+
+	public void setRoomList(List<Room> roomList) {
+		this.roomList = roomList;
+	}
+
 	@Override
 	public String toString() {
 		return "Local [id=" + id + ", name=" + name + ", plocalId=" + plocalId
-				+ ", elder=" + elder + "]";
+				+ ", elder=" + elder + ", carList=" + carList + ", roomList="
+				+ roomList + "]";
 	}
 
 }
