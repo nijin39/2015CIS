@@ -9,3 +9,5 @@ insert into local(local_name, plocal_id, local_elder) values ('용산',1,'김경
 insert into local(local_name, plocal_id, local_elder) values ('동작',1,'원종성');
 
 insert into car(car_name, driver_id, car_capacity, local) values ('엑스트렉',2,5,1);
+
+insert into room(room_name, room_capacity, local) values ('501',5,1);
