@@ -3,19 +3,20 @@ package com.church.conference;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.web.WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.xml.MarshallingHttpMessageConverter;
 import org.springframework.oxm.xstream.XStreamMarshaller;
 import org.springframework.web.servlet.config.annotation.ContentNegotiationConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 @Configuration
-public class WebMvcConfig extends WebMvcAutoConfigurationAdapter{
+public class WebMvcConfig extends WebMvcConfigurerAdapter{
 	@Override
 	public void configureContentNegotiation(ContentNegotiationConfigurer configurer){
-		configurer.defaultContentType(MediaType.APPLICATION_XML);
+		configurer.defaultContentType(MediaType.APPLICATION_JSON);
 		configurer.favorPathExtension(true);
 		configurer.mediaType("json",MediaType.APPLICATION_JSON);
 		configurer.mediaType("xml", MediaType.APPLICATION_XML);

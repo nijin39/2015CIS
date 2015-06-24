@@ -4,6 +4,8 @@ insert into groups(group_name, thread_pool_size) values ('GROUP3',5);
 insert into groups(group_name, thread_pool_size) values ('GROUP4',5);
 insert into groups(group_name, thread_pool_size) values ('GROUP5',5);
 
-insert into local(local_name, plocal_id, local_elder) values ('용산','','주평문');
+insert into local(local_name, plocal_id, local_elder) values ('용산',0,'주평문');
 insert into local(local_name, plocal_id, local_elder) values ('용산',1,'김경태');
 insert into local(local_name, plocal_id, local_elder) values ('동작',1,'원종성');
+
+insert into car(car_name, driver_id, car_capacity, local) values ('엑스트렉',2,5,1);
