@@ -1,10 +1,14 @@
 package com.church.conference.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -26,6 +30,10 @@ public class Local {
 	
 	@Column(name = "LOCAL_ELDER", unique = false, nullable = false)
 	private String elder;
+	
+	@OneToMany
+    //@JoinColumn(name="local_id", referencedColumnName="id")
+    private List<Car> carList;
 
 	public long getId() {
 		return id;
@@ -57,6 +65,14 @@ public class Local {
 
 	public void setElder(String elder) {
 		this.elder = elder;
+	}
+
+	public List<Car> getCarList() {
+		return carList;
+	}
+
+	public void setCarList(List<Car> carList) {
+		this.carList = carList;
 	}
 
 	@Override

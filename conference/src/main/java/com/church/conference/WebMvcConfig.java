@@ -15,7 +15,7 @@ import org.springframework.web.servlet.config.annotation.ContentNegotiationConfi
 public class WebMvcConfig extends WebMvcAutoConfigurationAdapter{
 	@Override
 	public void configureContentNegotiation(ContentNegotiationConfigurer configurer){
-		configurer.defaultContentType(MediaType.APPLICATION_XML);
+		configurer.defaultContentType(MediaType.APPLICATION_JSON);
 		configurer.favorPathExtension(true);
 		configurer.mediaType("json",MediaType.APPLICATION_JSON);
 		configurer.mediaType("xml", MediaType.APPLICATION_XML);
