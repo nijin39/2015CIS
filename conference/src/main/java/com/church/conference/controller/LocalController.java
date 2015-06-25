@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.church.conference.model.Car;
 import com.church.conference.model.Local;
 import com.church.conference.service.LocalRepository;
 

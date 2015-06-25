@@ -1,6 +1,8 @@
 package com.church.conference.model;
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,9 +10,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
@@ -33,10 +37,10 @@ public class Saint {
 	private int age;
 	
 	@Column(name = "SAINT_HEAD", unique = false, nullable = true)
-	private long head;
+	private Long head;
 
 	@Column(name = "SAINT_BREEDER", unique = false, nullable = true)
-	private long breeder;
+	private Long breeder;
 
 	@Column(name = "SAINT_STATUS", unique = false, nullable = false)
 	private String status;
@@ -48,6 +52,14 @@ public class Saint {
     @JoinColumn(name = "local", referencedColumnName = "LOCAL_ID")
 	@JsonManagedReference
     private Local local;
+	
+	@OneToMany(mappedBy = "saint")
+	@JsonBackReference
+    private List<RoomSaint> roomSaint;
+	
+	@OneToMany(mappedBy = "saint")
+	@JsonBackReference
+    private List<CarSaint> carSaint;
 
 	public long getId() {
 		return id;
@@ -81,19 +93,19 @@ public class Saint {
 		this.age = age;
 	}
 
-	public long getHead() {
+	public Long getHead() {
 		return head;
 	}
 
-	public void setHead(long head) {
+	public void setHead(Long head) {
 		this.head = head;
 	}
 
-	public long getBreeder() {
+	public Long getBreeder() {
 		return breeder;
 	}
 
-	public void setBreeder(long breeder) {
+	public void setBreeder(Long breeder) {
 		this.breeder = breeder;
 	}
 

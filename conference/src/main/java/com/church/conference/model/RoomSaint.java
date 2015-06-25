@@ -16,26 +16,29 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
  * @author admin
  *
  */
+/**
+ * @author admin
+ *
+ */
 @Entity
-@Table(name = "room", uniqueConstraints = {
-		@UniqueConstraint(columnNames = "ROOM_ID")
+@Table(name = "roomsaint", uniqueConstraints = {
+		@UniqueConstraint(columnNames = "ASSIGN_ROOM_ID")
 })  
 public class RoomSaint {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ROOM_ID", unique = true, nullable = false)
+	@Column(name="ASSIGN_ROOM_ID", unique = true, nullable = false)
 	private long id;
-	
-	@Column(name = "ROOM_NAME", unique = false, nullable = false)
-	private String name;
-	
-	@Column(name = "ROOM_CAPACITY", unique = false, nullable = false)
-	private int capacity;
 	
 	@ManyToOne
     @JoinColumn(name = "room", referencedColumnName = "ROOM_ID")
 	@JsonManagedReference
     private Room room;
+	
+	@ManyToOne
+    @JoinColumn(name = "saint", referencedColumnName = "SAINT_ID")
+	@JsonManagedReference
+    private Saint saint;
 
 	public long getId() {
 		return id;
@@ -45,34 +48,28 @@ public class RoomSaint {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public Room getRoom() {
+		return room;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setRoom(Room room) {
+		this.room = room;
 	}
 
-	public int getCapacity() {
-		return capacity;
+	public Saint getSaint() {
+		return saint;
 	}
 
-	public void setCapacity(int capacity) {
-		this.capacity = capacity;
-	}
-
-	public Local getLocal() {
-		return local;
-	}    
-
-	public void setLocal(Local local) {
-		this.local = local;
+	public void setSaint(Saint saint) {
+		this.saint = saint;
 	}
 
 	@Override
 	public String toString() {
-		return "Room [id=" + id + ", name=" + name + ", capacity=" + capacity
-				+ ", local=" + local + "]";
+		return "RoomSaint [id=" + id + ", room=" + room.getId() + ", saint=" + saint.getId()
+				+ "]";
 	}
+	
+	
 
 }
