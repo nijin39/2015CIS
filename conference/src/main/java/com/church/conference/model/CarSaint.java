@@ -1,7 +1,5 @@
 package com.church.conference.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,11 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 /**
@@ -24,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 @Table(name = "room", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "ROOM_ID")
 })  
-public class Room {
+public class CarSaint {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="ROOM_ID", unique = true, nullable = false)
@@ -40,10 +36,6 @@ public class Room {
     @JoinColumn(name = "local", referencedColumnName = "LOCAL_ID")
 	@JsonManagedReference
     private Local local;
-	
-	@OneToMany(mappedBy = "room")
-	@JsonBackReference
-    private List<RoomSaint> roomSaint;
 
 	public long getId() {
 		return id;
