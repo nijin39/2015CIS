@@ -27,10 +27,13 @@ public class Local {
 	private String name;
 
 	@Column(name = "PLOCAL_ID", unique = false, nullable = true)
-	private long plocalId;
+	private Long plocalId;
 	
 	@Column(name = "LOCAL_ELDER", unique = false, nullable = false)
 	private String elder;
+	
+	@Column(name = "LOCAL_LEVEL", unique = false, nullable = false)
+	private Integer level;
 	
 	@OneToMany(mappedBy = "local")
 	@JsonBackReference
@@ -43,6 +46,7 @@ public class Local {
 	@OneToMany(mappedBy = "local")
 	@JsonBackReference
     private List<Saint> saintList;
+
 
 	public long getId() {
 		return id;
@@ -60,11 +64,11 @@ public class Local {
 		this.name = name;
 	}
 
-	public long getPlocalId() {
+	public Long getPlocalId() {
 		return plocalId;
 	}
 
-	public void setPlocalId(long plocalId) {
+	public void setPlocalId(Long plocalId) {
 		this.plocalId = plocalId;
 	}
 
@@ -74,6 +78,14 @@ public class Local {
 
 	public void setElder(String elder) {
 		this.elder = elder;
+	}
+
+	public Integer getLevel() {
+		return level;
+	}
+
+	public void setLevel(Integer level) {
+		this.level = level;
 	}
 
 	public List<Car> getCarList() {
@@ -90,6 +102,14 @@ public class Local {
 
 	public void setRoomList(List<Room> roomList) {
 		this.roomList = roomList;
+	}
+
+	public List<Saint> getSaintList() {
+		return saintList;
+	}
+
+	public void setSaintList(List<Saint> saintList) {
+		this.saintList = saintList;
 	}
 
 	@Override
