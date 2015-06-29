@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.church.conference.model.Room;
-import com.church.conference.service.RoomRepository;
+import com.church.conference.repository.RoomRepository;
 
 @RestController
 public class RoomController {

@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.church.conference.model.CarSaint;
 import com.church.conference.model.RoomSaint;
-import com.church.conference.service.CarSaintRepository;
-import com.church.conference.service.RoomSaintRepository;
+import com.church.conference.repository.CarSaintRepository;
+import com.church.conference.repository.RoomSaintRepository;
 
 @RestController
 public class AssignController {

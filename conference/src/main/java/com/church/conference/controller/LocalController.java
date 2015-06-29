@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.church.conference.model.Local;
-import com.church.conference.service.LocalRepository;
+import com.church.conference.repository.LocalRepository;
 
 @RestController
 public class LocalController {

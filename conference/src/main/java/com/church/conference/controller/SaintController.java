@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.church.conference.model.Saint;
-import com.church.conference.service.SaintRepository;
+import com.church.conference.repository.SaintRepository;
 
 @RestController
 public class SaintController {

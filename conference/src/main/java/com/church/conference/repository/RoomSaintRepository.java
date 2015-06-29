@@ -1,4 +1,4 @@
-package com.church.conference.service;
+package com.church.conference.repository;
 
 import java.util.List;
 
