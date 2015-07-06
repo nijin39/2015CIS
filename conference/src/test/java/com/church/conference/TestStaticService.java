@@ -2,7 +2,7 @@ package com.church.conference;
 
 import static org.junit.Assert.assertEquals;
 
-import java.util.List;
+import java.util.Map;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -32,12 +32,23 @@ public class TestStaticService {
 		assertEquals(countByLocal,4);
 	}
 	
+//	@Test
+//	public void testFindByAllLocal() throws Exception{
+//		int SMALL_LOCAL_LEVEL = 3;
+//		//List<Local> locals = staticService.findByAllLocal();
+//		List<Local> locals = localRepository.findByLevel(SMALL_LOCAL_LEVEL);
+//		for(Local local : locals){
+//			System.out.println( local.getName()+ " " + local.getSaintList().size());
+//		}
+//		assertEquals(4,4);
+//	}
+	
 	@Test
-	public void testFindByAllLocal() throws Exception{
-		List<Local> locals = staticService.findByAllLocal();
-		for(Local local : locals){
-			System.out.println( local.getSaintList() );
-		}
-		assertEquals(4,4);
+	public void testCountSaintByLocalLevel() throws Exception{
+		int level = 2;
+		Map<Local, Integer> countSaintByLocal = staticService.countSaintByLocalLevel(level);
+		for (Local local : countSaintByLocal.keySet()) {
+            System.out.println(local.toString() + " " + countSaintByLocal.get(local));
+        }
 	}
 }

@@ -15,6 +15,9 @@ import javax.persistence.UniqueConstraint;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
+/*
+ * pLocalId : Self reference column change need
+ */
 @Entity
 @Table(name = "local", uniqueConstraints = {
 		@UniqueConstraint(columnNames = "LOCAL_ID")

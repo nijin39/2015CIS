@@ -1,10 +1,10 @@
 package com.church.conference.service;
 
-import java.util.List;
+import java.util.Map;
 
 import com.church.conference.model.Local;
 
 public interface StaticService {
 	public int countByLocal(Local local);
-	public List<Local> findByAllLocal();
+	public Map<Local, Integer> countSaintByLocalLevel(int level);
 }
