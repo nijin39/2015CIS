@@ -2,8 +2,10 @@ package com.church.conference.model;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -43,7 +45,7 @@ public class Local {
 	@JsonBackReference
     private List<Room> roomList;
 	
-	@OneToMany(mappedBy = "local")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy = "local", cascade = CascadeType.ALL)
 	@JsonBackReference
     private List<Saint> saintList;
 
@@ -115,8 +117,9 @@ public class Local {
 	@Override
 	public String toString() {
 		return "Local [id=" + id + ", name=" + name + ", plocalId=" + plocalId
-				+ ", elder=" + elder + ", carList=" + carList + ", roomList="
-				+ roomList + "]";
+				+ ", elder=" + elder + ", level=" + level + "]";
 	}
+	
+	
 
 }
