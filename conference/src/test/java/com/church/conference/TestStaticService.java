@@ -2,6 +2,8 @@ package com.church.conference;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.List;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +30,14 @@ public class TestStaticService {
 		Local local = localRepository.findById(4);
 		int countByLocal = staticService.countByLocal(local);
 		assertEquals(countByLocal,4);
+	}
+	
+	@Test
+	public void testFindByAllLocal() throws Exception{
+		List<Local> locals = staticService.findByAllLocal();
+		for(Local local : locals){
+			System.out.println( local.getSaintList() );
+		}
+		assertEquals(4,4);
 	}
 }
