@@ -44,11 +44,20 @@ public class TestStaticService {
 //	}
 	
 	@Test
-	public void testCountSaintByLocalLevel() throws Exception{
+	public void testCountSaintByLocalLevel2() throws Exception{
 		int level = 2;
 		Map<Local, Integer> countSaintByLocal = staticService.countSaintByLocalLevel(level);
 		for (Local local : countSaintByLocal.keySet()) {
             System.out.println(local.toString() + " " + countSaintByLocal.get(local));
+        }
+	}
+	
+	@Test
+	public void testCountSaintByLocalLevel1() throws Exception{
+		int level = 1;
+		Map<Local, Integer> countSaintByLocal = staticService.countSaintByLocalLevel(level);
+		for (Local local : countSaintByLocal.keySet()) {
+            System.out.println("LEVEL1 : " + local.toString() + " " + countSaintByLocal.get(local));
         }
 	}
 }
