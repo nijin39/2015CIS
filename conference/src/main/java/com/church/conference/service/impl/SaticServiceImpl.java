@@ -84,8 +84,10 @@ public class SaticServiceImpl implements StaticService {
 
 	@Override
 	public Map<Date, Integer> countSaintByDate(Date date){
+		
 		return null;
 	}
+	
 	private int getCountByLocalLevel(List<Local> locals) {
 		int countSaint = 0;
 		for (Local local : locals) {

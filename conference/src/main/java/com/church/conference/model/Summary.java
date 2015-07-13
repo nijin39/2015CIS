@@ -1,20 +1,14 @@
 package com.church.conference.model;
 
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /*
  * pLocalId : Self reference column change need
@@ -34,6 +28,12 @@ public class Summary {
 	
 	@Column(name = "COUNT", unique = false, nullable = false)
 	private Integer count;
+
+	public Summary(Date date, Integer count) {
+		super();
+		this.date = date;
+		this.count = count;
+	}
 
 	public long getId() {
 		return id;

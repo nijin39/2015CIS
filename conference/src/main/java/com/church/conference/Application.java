@@ -4,6 +4,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.church.conference.repository.SummaryRepository;
 
 @SpringBootApplication
 public class Application extends SpringBootServletInitializer{
@@ -14,6 +17,10 @@ public class Application extends SpringBootServletInitializer{
 	}
 	
 	public static void main(String[] args){
-		SpringApplication.run(Application.class, args);
+		//SpringApplication.run(Application.class, args);
+		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
+       SummaryRepository summaryRepository = context.getBean(SummaryRepository.class);
+       
+       summaryRepository.save("2015-06-10",5);
 	}
 }
