@@ -12,6 +12,7 @@ import com.church.conference.model.Local;
 import com.church.conference.model.Saint;
 import com.church.conference.repository.LocalRepository;
 import com.church.conference.repository.SaintRepository;
+import com.church.conference.repository.SummaryRepository;
 import com.church.conference.service.StaticService;
 
 @Service
@@ -21,6 +22,9 @@ public class SaticServiceImpl implements StaticService {
 
 	@Autowired
 	LocalRepository localRepository;
+	
+	@Autowired
+	SummaryRepository summaryRepository;
 
 	@Override
 	public int countByLocal(Local local) {
@@ -86,6 +90,7 @@ public class SaticServiceImpl implements StaticService {
 	public Map<Date, Integer> countSaintByDate(Date date){
 		return null;
 	}
+	
 	private int getCountByLocalLevel(List<Local> locals) {
 		int countSaint = 0;
 		for (Local local : locals) {

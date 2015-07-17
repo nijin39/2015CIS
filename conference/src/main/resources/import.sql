@@ -23,3 +23,5 @@ insert into roomsaint(room, saint) values (1,2);
 insert into roomsaint(room, saint) values (1,3);
 insert into roomsaint(room, saint) values (1,4);
 
+insert into summary(COUNTDATE, COUNT) values ('2010-01-01', 10);
+

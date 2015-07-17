@@ -1,20 +1,14 @@
 package com.church.conference.model;
 
 import java.util.Date;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 /*
  * pLocalId : Self reference column change need
@@ -29,26 +23,18 @@ public class Summary {
 	@Column(name="SUMMARY_ID", unique = true, nullable = false)
 	private long id;
 	
-	@Column(name = "DATE", unique = false, nullable = false)
-	private Date date;
+	@Column(name = "COUNTDATE", unique = false, nullable = false)
+	private Date countDate;
 	
 	@Column(name = "COUNT", unique = false, nullable = false)
 	private Integer count;
 
-	public long getId() {
-		return id;
+	public Date getCountDate() {
+		return countDate;
 	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public Date getDate() {
-		return date;
-	}
-
-	public void setDate(Date date) {
-		this.date = date;
+	public void setCountDate(Date countDate) {
+		this.countDate = countDate;
 	}
 
 	public Integer getCount() {
@@ -61,7 +47,9 @@ public class Summary {
 
 	@Override
 	public String toString() {
-		return "Summary [date=" + date + ", count=" + count + "]";
+		return "Summary [countDate=" + countDate + ", count=" + count + "]";
 	}
+
+
 	
 }
