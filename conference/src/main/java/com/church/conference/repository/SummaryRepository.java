@@ -9,7 +9,7 @@ import com.church.conference.model.Saint;
 import com.church.conference.model.Summary;
 
 public interface SummaryRepository extends CrudRepository<Summary, Long> {
-	Saint findById(long saintId);
 	List<Summary> findAll();
 	List<Summary> findByCountDate(Date countDate);
+
 }

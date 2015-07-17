@@ -50,6 +50,4 @@ public class Summary {
 		return "Summary [countDate=" + countDate + ", count=" + count + "]";
 	}
 
-
-	
 }

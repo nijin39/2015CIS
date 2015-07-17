@@ -88,6 +88,7 @@ public class SaticServiceImpl implements StaticService {
 
 	@Override
 	public Map<Date, Integer> countSaintByDate(Date date){
+		
 		return null;
 	}
 	
