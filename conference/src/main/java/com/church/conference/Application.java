@@ -20,7 +20,6 @@ public class Application extends SpringBootServletInitializer{
 		//SpringApplication.run(Application.class, args);
 		ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
        SummaryRepository summaryRepository = context.getBean(SummaryRepository.class);
-       
-       summaryRepository.save("2015-06-10",5);
+
 	}
 }
